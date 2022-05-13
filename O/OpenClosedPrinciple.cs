@@ -12,7 +12,7 @@ public class OpenClosedPrinciple
         rect.SetShape(12);
         var circle = new Circle();
         circle.SetShape(12);
-        Shapes<string>[] shapes = new Shapes<string>[] { rect, circle };
+        Shapes[] shapes = new Shapes[] { rect, circle };
         area.SetShape(shapes);
         Console.WriteLine($"Given Rectangle Area is: {area.Area()[0]}cm^2 and \nGiven Circle area is: {area.Area()[1]}cm^2");
     }
@@ -25,8 +25,8 @@ public class OpenClosedPrinciple
 /// </summary>
 public class AreaCalculator
 {
-    protected Shapes<string>[] shapes;
-    public void SetShape(Shapes<string>[] shapes) =>
+    protected Shapes[] shapes;
+    public void SetShape(Shapes[] shapes) =>
         this.shapes = shapes;
 
     public float[] Area()
@@ -42,49 +42,42 @@ public class AreaCalculator
     }
 }
 
-public abstract class Shapes<T>
+public abstract class Shapes
 {
-    public T t;
     public float length { get; protected set; }
     public float radius { get; protected set; }
     public abstract void SetShape(float data);
     public abstract float ShapeArea();
 }
 
-public class Rectangle : Shapes<string>
+public class Rectangle : Shapes
 {
-    new string t = "Rectangle";
     public override void SetShape(float data)
     {
-        SetT();
         SetLen(data);
     }
-    public void SetT() => base.t = t;
 
     public void SetLen(float length) =>
         this.length = length;
 
     public override float ShapeArea()
     {
-        return (float) Math.Pow(length, 2);
+        return (float)Math.Pow(length, 2);
     }
 }
 
-public class Circle : Shapes<string>
+public class Circle : Shapes
 {
-    new string t = "Circle";
     public override void SetShape(float data)
     {
-        SetT();
         SetRad(data);
     }
-    public void SetT() => base.t = t;
 
     public void SetRad(float radius) =>
         this.radius = radius;
 
     public override float ShapeArea()
     {
-        return (float) (Math.PI * Math.Pow(radius, 2));
+        return (float)(Math.PI * Math.Pow(radius, 2));
     }
 }
