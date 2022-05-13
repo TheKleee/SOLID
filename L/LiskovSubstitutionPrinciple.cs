@@ -68,8 +68,7 @@ public class VolumeCalculator : AreaCalculator
 
 public abstract class Shapes
 {
-    public float length { get; protected set; }
-    public float radius { get; protected set; }
+    protected float length, radius;
     public abstract void SetShape(float data);
     public abstract float ShapeArea();
     public virtual float ShapeVolume() { return 0; }
