@@ -14,7 +14,7 @@ public class OpenClosedPrinciple
         circle.SetShape(12);
         Shapes<string>[] shapes = new Shapes<string>[] { rect, circle };
         area.SetShape(shapes);
-        Console.WriteLine($"Given Rectangle Area is: {area.Area()[0]}cm^3 and \nGiven Circle area is: {area.Area()[1]}cm^3");
+        Console.WriteLine($"Given Rectangle Area is: {area.Area()[0]}cm^2 and \nGiven Circle area is: {area.Area()[1]}cm^2");
     }
 }
 
