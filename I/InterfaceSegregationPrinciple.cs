@@ -56,7 +56,7 @@ public class AreaCalculator : Calculator, iManageCalculator
     }
 }
 
-public class VolumeCalculator : AreaCalculator, iManageCalculator
+public class VolumeCalculator : AreaCalculator
 {
 
     public new void SetShape(iManageShapes[] shapes) =>
